@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DetalleNotas from "./DetalleNotas";
+import DetalleNotas from "./detalleNotas/DetalleNotas";
 
 class ListaNotas extends Component {
   render() {
