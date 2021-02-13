@@ -4,10 +4,10 @@ import "./estilo.css";
 class DetalleNotas extends Component {
   render() {
     return (
-      <section className="nota">
-        <header>
-          <h3>Titulo</h3>
-          <p>Registro de nota</p>
+      <section className="detalle-nota">
+        <header className="detalle-nota_header">
+          <h3 className="detalle-nota_titulo">Titulo</h3>
+          <p className="detalle-nota_texto">Registro de nota</p>
         </header>
       </section>
     );

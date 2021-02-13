@@ -1,6 +1,8 @@
 import { Component } from "react";
-import ListaNotas from "./components/ListaNotas";
+import ListaNotas from "./components/listaNotas/ListaNotas";
 import RegistroNotas from "./components/RegistroNotas";
+
+import "./index.css";
 
 class App extends Component {
   render() {
