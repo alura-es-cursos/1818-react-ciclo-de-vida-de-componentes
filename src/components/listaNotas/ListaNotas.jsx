@@ -5,12 +5,12 @@ import "./estilo.css";
 class ListaNotas extends Component {
   render() {
     return (
-      <ul>
-        {Array.of("React", "Oracle", "Java", "C#").map((curso, indice) => {
+      <ul className="lista-notas">
+        {Array.of("React", "Oracle", "Java").map((curso, indice) => {
           return (
-            <li key={indice}>
-              <div className="lista-nota_texto">{curso}</div>
-              <DetalleNotas/>
+            <li className="lista-notas_item" key={indice}>
+              <div>{}</div>
+              <DetalleNotas />
             </li>
           );
         })}

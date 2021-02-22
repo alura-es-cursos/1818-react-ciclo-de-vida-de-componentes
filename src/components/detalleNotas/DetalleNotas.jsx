@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./estilo.css";
 
 class DetalleNotas extends Component {
@@ -7,8 +7,8 @@ class DetalleNotas extends Component {
       <section className="detalle-nota">
         <header className="detalle-nota_header">
           <h3 className="detalle-nota_titulo">Titulo</h3>
-          <p className="detalle-nota_texto">Registro de nota</p>
         </header>
+        <p className="detalle-nota_texto">Registro de nota</p>
       </section>
     );
   }

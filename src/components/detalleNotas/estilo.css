@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--fundo-detalhes);
+  background-color: var(--fondo-detalles);
   border-radius: 4px;
   flex-wrap: wrap;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
@@ -20,7 +20,6 @@
 .detalle-nota_texto {
   margin-top: 8px;
   font-size: 1em;
-  color:darkseagreen;
 }
 
 .detalle-nota_titulo {

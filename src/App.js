@@ -1,13 +1,13 @@
 import { Component } from "react";
 import ListaNotas from "./components/listaNotas/ListaNotas";
-import RegistroNotas from "./components/RegistroNotas";
-
+import RegistroNotas from "./components/registroNotas/RegistroNotas";
 import "./index.css";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <section>
+      <section className="contenido">
         <RegistroNotas />
         <ListaNotas />
       </section>

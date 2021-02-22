@@ -1,0 +1,11 @@
+.contenido {
+  display: flex;
+}
+
+:root {
+  --primaria: #58a4b0;
+  --secundaria: #373f51;
+  --secundaria-activa: #cccccc;
+  --fondo: #ffffff;
+  --fondo-detalles: #ececec;
+}
