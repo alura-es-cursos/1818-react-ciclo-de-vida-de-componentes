@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DetalleNotas from "../detalleNotas/DetalleNotas";
+import DetalleNotas from "../detalleNotas";
 import "./estilo.css";
 
 class ListaNotas extends Component {
@@ -9,7 +9,7 @@ class ListaNotas extends Component {
         {Array.of("React", "Oracle", "Java").map((curso, indice) => {
           return (
             <li className="lista-notas_item" key={indice}>
-              <div>{}</div>
+              <div>{curso}</div>
               <DetalleNotas />
             </li>
           );

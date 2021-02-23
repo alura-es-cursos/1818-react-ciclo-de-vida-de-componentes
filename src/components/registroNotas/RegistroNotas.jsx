@@ -11,6 +11,7 @@ class RegistroNotas extends Component {
           className="registro-nota_input"
         />
         <textarea
+          rows={15}
           placeholder="Registro de nota"
           className="registro-nota_input"
         />

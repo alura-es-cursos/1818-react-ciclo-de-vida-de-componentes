@@ -1,8 +1,8 @@
 import { Component } from "react";
-import ListaNotas from "./components/listaNotas/ListaNotas";
-import RegistroNotas from "./components/registroNotas/RegistroNotas";
-import "./index.css";
-import "./App.css";
+import ListaNotas from "./components/listaNotas";
+import RegistroNotas from "./components/registroNotas";
+import "./assets/index.css";
+import "./assets/App.css";
 
 class App extends Component {
   render() {
