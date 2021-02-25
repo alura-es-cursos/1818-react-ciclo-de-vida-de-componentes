@@ -2,30 +2,45 @@ import React, { Component } from "react";
 import "./estilo.css";
 
 class RegistroNotas extends Component {
-
-  constructor(){
-    super();
+  constructor(props) {
+    super(props);
     this.titulo = "";
+    this.nota = "";
   }
 
-  handleTitulo(evento) {
+  _handleTitulo(evento) {
+    evento.stopPropagation();
     this.titulo = evento.target.value;
-    console.log(this.titulo);
+  }
+
+  _handleNota(evento) {
+    evento.stopPropagation();
+    this.nota = evento.target.value;
+  }
+
+  _handleRegistrar(evento) {
+    evento.preventDefault();
+    evento.stopPropagation();
+    this.props.registrar(this.titulo, this.nota);
   }
 
   render() {
     return (
-      <form className="registro-nota">
+      <form
+        className="registro-nota"
+        onSubmit={this._handleRegistrar.bind(this)}
+      >
         <input
           type="text"
           placeholder="Titulo"
           className="registro-nota_input"
-          onChange={this.handleTitulo.bind(this)}
+          onChange={this._handleTitulo.bind(this)}
         />
         <textarea
           rows={15}
           placeholder="Registro de nota"
           className="registro-nota_input"
+          onChange={this._handleNota.bind(this)}
         />
         <button className="registro-nota_input registro-nota_submit">
           Registrar nota

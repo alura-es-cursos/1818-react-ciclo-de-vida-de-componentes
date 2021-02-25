@@ -3,6 +3,7 @@ import DetalleNotas from "../detalleNotas";
 import "./estilo.css";
 
 class ListaNotas extends Component {
+
   render() {
     return (
       <ul className="lista-notas">

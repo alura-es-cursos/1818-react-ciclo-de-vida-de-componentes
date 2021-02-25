@@ -5,10 +5,15 @@ import "./assets/index.css";
 import "./assets/App.css";
 
 class App extends Component {
+
+  handleRegistrar(titulo, nota){
+    console.log("El titulo es " + titulo + " , la nota es " + nota);
+  }
+
   render() {
     return (
       <section className="contenido">
-        <RegistroNotas />
+        <RegistroNotas registrar={this.handleRegistrar} />
         <ListaNotas />
       </section>
     );
