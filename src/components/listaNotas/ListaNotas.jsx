@@ -7,7 +7,7 @@ class ListaNotas extends Component {
   render() {
     return (
       <ul className="lista-notas">
-        {Array.of("React", "Oracle", "Java").map((curso, indice) => {
+        {this.props.notas.map((curso, indice) => {
           return (
             <li className="lista-notas_item" key={indice}>
               <div>{curso}</div>

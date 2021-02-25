@@ -18,7 +18,7 @@ class RegistroNotas extends Component {
     this.nota = evento.target.value;
   }
 
-  _handleRegistrar(evento) {
+  _registrar(evento) {
     evento.preventDefault();
     evento.stopPropagation();
     this.props.registrar(this.titulo, this.nota);
@@ -28,7 +28,7 @@ class RegistroNotas extends Component {
     return (
       <form
         className="registro-nota"
-        onSubmit={this._handleRegistrar.bind(this)}
+        onSubmit={this._registrar.bind(this)}
       >
         <input
           type="text"
