@@ -6,9 +6,9 @@ class DetalleNotas extends Component {
     return (
       <section className="detalle-nota">
         <header className="detalle-nota_header">
-          <h3 className="detalle-nota_titulo">Titulo</h3>
+          <h3 className="detalle-nota_titulo">{this.props.titulo}</h3>
         </header>
-        <p className="detalle-nota_texto">Registro de nota</p>
+        <p className="detalle-nota_texto">{this.props.nota}</p>
       </section>
     );
   }
