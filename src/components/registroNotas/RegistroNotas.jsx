@@ -2,6 +2,17 @@ import React, { Component } from "react";
 import "./estilo.css";
 
 class RegistroNotas extends Component {
+
+  constructor(){
+    super();
+    this.titulo = "";
+  }
+
+  handleTitulo(evento) {
+    this.titulo = evento.target.value;
+    console.log(this.titulo);
+  }
+
   render() {
     return (
       <form className="registro-nota">
@@ -9,6 +20,7 @@ class RegistroNotas extends Component {
           type="text"
           placeholder="Titulo"
           className="registro-nota_input"
+          onChange={this.handleTitulo}
         />
         <textarea
           rows={15}
