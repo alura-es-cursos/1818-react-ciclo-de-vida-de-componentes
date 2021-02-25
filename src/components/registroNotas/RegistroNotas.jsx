@@ -20,7 +20,7 @@ class RegistroNotas extends Component {
           type="text"
           placeholder="Titulo"
           className="registro-nota_input"
-          onChange={this.handleTitulo}
+          onChange={this.handleTitulo.bind(this)}
         />
         <textarea
           rows={15}
