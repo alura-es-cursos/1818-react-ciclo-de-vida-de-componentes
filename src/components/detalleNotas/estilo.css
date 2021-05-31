@@ -10,6 +10,10 @@
   padding: 16px;
 }
 
+.bloque-principal {
+  flex-grow: 3;
+}
+
 .detalle-nota_header {
   font-size: 1.1em;
   display: flex;
