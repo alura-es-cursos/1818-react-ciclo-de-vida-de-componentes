@@ -10,7 +10,7 @@ class App extends Component {
     super();
     this.state = {
       notas: [],
-      categorias: []
+      categorias: [],
     };
   }
 
@@ -19,6 +19,15 @@ class App extends Component {
     const nuevoArray = [...this.state.notas, objeto];
     const state = {
       notas: nuevoArray,
+    };
+    this.setState(state);
+  }
+
+  registrarCategoria(nombre) {
+    const nuevoArray = [...this.state.categorias, nombre];
+    const state = {
+      ...this.state,
+      categorias: nuevoArray,
     };
     this.setState(state);
   }
@@ -34,7 +43,10 @@ class App extends Component {
       <section className="contenido">
         <RegistroNotas registrar={this.registrar.bind(this)} />
         <section className="bloque-principal">
-          <ListaCategorias />
+          <ListaCategorias
+            registrarCategoria={this.registrarCategoria.bind(this)}
+            categorias={this.state.categorias}
+          />
           <ListaNotas
             excluir={this.excluir.bind(this)}
             notas={this.state.notas}
