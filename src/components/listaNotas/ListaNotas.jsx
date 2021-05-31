@@ -10,7 +10,11 @@ class ListaNotas extends Component {
         {this.props.notas.map((valor, indice) => {
           return (
             <li className="lista-notas_item" key={indice}>
-              <DetalleNotas titulo={valor.titulo} nota={valor.nota} />
+              <DetalleNotas
+              indice = {indice}
+              excluir={this.props.excluir} 
+              titulo={valor.titulo} 
+              nota={valor.nota} />
             </li>
           );
         })}

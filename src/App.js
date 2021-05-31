@@ -22,11 +22,17 @@ class App extends Component {
     this.setState(state);
   }
 
+  excluir(indice) {
+    const array = this.state.notas;
+    array.splice(indice,1);
+    this.setState({notas : array});
+  }
+
   render() {
     return (
       <section className="contenido">
         <RegistroNotas registrar={this.registrar.bind(this)} />
-        <ListaNotas notas={this.state.notas} />
+        <ListaNotas excluir={this.excluir.bind(this)} notas={this.state.notas} />
       </section>
     );
   }
