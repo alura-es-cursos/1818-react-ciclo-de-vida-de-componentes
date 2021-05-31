@@ -6,6 +6,7 @@ class RegistroNotas extends Component {
     super(props);
     this.titulo = "";
     this.nota = "";
+    this.categoria = "Sin categoria";
   }
 
   _handleTitulo(evento) {
@@ -18,25 +19,24 @@ class RegistroNotas extends Component {
     this.nota = evento.target.value;
   }
 
+  _handleCategoria(evento) {
+    evento.stopPropagation();
+    this.categoria = evento.target.value;
+  }
+
   _registrar(evento) {
     evento.preventDefault();
     evento.stopPropagation();
-    this.props.registrar(this.titulo, this.nota);
+    this.props.registrar(this.titulo, this.nota, this.categoria);
   }
 
   render() {
     return (
-      <form
-        className="registro-nota"
-        onSubmit={this._registrar.bind(this)}
-      >
-        <select className="registro-nota_input">
-        {this.props.categorias.map((valor, indice) => {
-            return (
-              <option>
-                {valor}
-              </option>
-            );
+      <form className="registro-nota" onSubmit={this._registrar.bind(this)}>
+        <select onChange={this._handleCategoria.bind(this)} className="registro-nota_input">
+          <option>Sin Categoria</option>
+          {this.props.categorias.map((valor, indice) => {
+            return <option>{valor}</option>;
           })}
         </select>
         <input

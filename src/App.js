@@ -14,8 +14,8 @@ class App extends Component {
     };
   }
 
-  registrar(titulo, nota) {
-    const objeto = { titulo, nota };
+  registrar(titulo, nota, categoria) {
+    const objeto = { titulo, nota, categoria };
     const nuevoArray = [...this.state.notas, objeto];
     const state = {
       notas: nuevoArray,
