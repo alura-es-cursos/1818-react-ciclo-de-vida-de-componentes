@@ -41,7 +41,10 @@ class App extends Component {
   render() {
     return (
       <section className="contenido">
-        <RegistroNotas registrar={this.registrar.bind(this)} />
+        <RegistroNotas
+          categorias={this.state.categorias}
+          registrar={this.registrar.bind(this)}
+        />
         <section className="bloque-principal">
           <ListaCategorias
             registrarCategoria={this.registrarCategoria.bind(this)}

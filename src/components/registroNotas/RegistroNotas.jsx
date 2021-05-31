@@ -30,6 +30,15 @@ class RegistroNotas extends Component {
         className="registro-nota"
         onSubmit={this._registrar.bind(this)}
       >
+        <select className="registro-nota_input">
+        {this.props.categorias.map((valor, indice) => {
+            return (
+              <option>
+                {valor}
+              </option>
+            );
+          })}
+        </select>
         <input
           type="text"
           placeholder="Titulo"
