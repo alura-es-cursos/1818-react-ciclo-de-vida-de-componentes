@@ -1,6 +1,7 @@
 export default class ArrayNotas {
   constructor() {
     this.notas = [];
+    this._inscritos = [];
   }
 
   registrar(titulo, nota, categoria) {
@@ -10,6 +11,16 @@ export default class ArrayNotas {
 
   excluir(indice) {
     this.notas.splice(indice, 1);
+  }
+
+  inscribir(func) {
+    this._inscritos.push(func);
+  }
+
+  notificar() {
+    this._inscritos.forEach((func) => {
+      func(this.categorias);
+    });
   }
 }
 
