@@ -24,8 +24,8 @@ class App extends Component {
         />
         <section className="bloque-principal">
           <ListaCategorias
-            registrarCategoria={this.categorias.registrar}
-            categorias={this.categorias.categorias}
+            registrarCategoria={this.categorias.registrar.bind(this.categorias)}
+            categorias={this.categorias}
           />
           <ListaNotas
             excluir={this.notas.excluir}

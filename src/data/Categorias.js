@@ -16,6 +16,6 @@ export default class Categorias {
 
   registrar(nombre) {
     this.categorias.push(nombre);
-    console.log(this.categorias);
+    this.notificar();
   }
 }
