@@ -4,55 +4,32 @@ import RegistroNotas from "./components/registroNotas";
 import "./assets/index.css";
 import "./assets/App.css";
 import ListaCategorias from "./components/listaCategorias";
+import ArrayNotas from "./data/ArrayNotas";
+import Categorias from "./data/Categorias";
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      notas: [],
-      categorias: [],
-    };
+    this.notas = new ArrayNotas();
+    this.categorias = new Categorias();
   }
 
-  registrar(titulo, nota, categoria) {
-    const objeto = { titulo, nota, categoria };
-    const nuevoArray = [...this.state.notas, objeto];
-    const state = {
-      notas: nuevoArray,
-    };
-    this.setState(state);
-  }
-
-  registrarCategoria(nombre) {
-    const nuevoArray = [...this.state.categorias, nombre];
-    const state = {
-      ...this.state,
-      categorias: nuevoArray,
-    };
-    this.setState(state);
-  }
-
-  excluir(indice) {
-    const array = this.state.notas;
-    array.splice(indice, 1);
-    this.setState({ notas: array });
-  }
 
   render() {
     return (
       <section className="contenido">
         <RegistroNotas
-          categorias={this.state.categorias}
-          registrar={this.registrar.bind(this)}
+          categorias={this.categorias.categorias}
+          registrar={this.notas.registrar}
         />
         <section className="bloque-principal">
           <ListaCategorias
-            registrarCategoria={this.registrarCategoria.bind(this)}
-            categorias={this.state.categorias}
+            registrarCategoria={this.categorias.registrar}
+            categorias={this.categorias.categorias}
           />
           <ListaNotas
-            excluir={this.excluir.bind(this)}
-            notas={this.state.notas}
+            excluir={this.notas.excluir}
+            notas={this.notas.notas}
           />
         </section>
       </section>
