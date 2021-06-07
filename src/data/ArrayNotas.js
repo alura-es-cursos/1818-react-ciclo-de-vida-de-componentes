@@ -7,10 +7,12 @@ export default class ArrayNotas {
   registrar(titulo, nota, categoria) {
     const objecto = new Nota(titulo, nota, categoria);
     this.notas.push(objecto);
+    this.notificar();
   }
 
   excluir(indice) {
     this.notas.splice(indice, 1);
+    this.notificar();
   }
 
   inscribir(func) {
@@ -19,7 +21,7 @@ export default class ArrayNotas {
 
   notificar() {
     this._inscritos.forEach((func) => {
-      func(this.categorias);
+      func(this.notas);
     });
   }
 }

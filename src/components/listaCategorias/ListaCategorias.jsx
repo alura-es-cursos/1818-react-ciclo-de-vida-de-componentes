@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import "./estilo.css";
 
 class ListaCategorias extends Component {
+  constructor() {
+    super();
+    this.state = { categorias: [] };
+  }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.categorias.inscribir(this._nuevasCategorias.bind(this));
   }
 
-  _nuevasCategorias(categorias){
-    console.log("Prueba")
-    console.log(categorias);
+  _nuevasCategorias(categorias) {
+    this.setState({ ...this.state, categorias });
   }
 
   _handleEventoInput(e) {
@@ -23,7 +26,7 @@ class ListaCategorias extends Component {
     return (
       <section className="lista-categorias">
         <ul className="lista-categorias_lista">
-          {this.props.categorias.categorias.map((valor, indice) => {
+          {this.state.categorias.map((valor, indice) => {
             return (
               <li className="lista-categorias_item" key={indice}>
                 {valor}

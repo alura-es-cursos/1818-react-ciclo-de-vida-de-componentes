@@ -19,8 +19,8 @@ class App extends Component {
     return (
       <section className="contenido">
         <RegistroNotas
-          categorias={this.categorias.categorias}
-          registrar={this.notas.registrar}
+          categorias={this.categorias}
+          registrar={this.notas.registrar.bind(this.notas)}
         />
         <section className="bloque-principal">
           <ListaCategorias
@@ -28,8 +28,8 @@ class App extends Component {
             categorias={this.categorias}
           />
           <ListaNotas
-            excluir={this.notas.excluir}
-            notas={this.notas.notas}
+            excluir={this.notas.excluir.bind(this.notas)}
+            notas={this.notas}
           />
         </section>
       </section>

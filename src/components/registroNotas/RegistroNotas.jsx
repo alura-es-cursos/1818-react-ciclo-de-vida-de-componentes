@@ -7,7 +7,17 @@ class RegistroNotas extends Component {
     this.titulo = "";
     this.nota = "";
     this.categoria = "Sin categoria";
+    this.state = { categorias: [] };
   }
+
+  componentDidMount() {
+    this.props.categorias.inscribir(this._nuevasCategorias.bind(this));
+  }
+
+  _nuevasCategorias(categorias) {
+    this.setState({ ...this.state, categorias });
+  }
+
 
   _handleTitulo(evento) {
     evento.stopPropagation();
@@ -35,8 +45,8 @@ class RegistroNotas extends Component {
       <form className="registro-nota" onSubmit={this._registrar.bind(this)}>
         <select onChange={this._handleCategoria.bind(this)} className="registro-nota_input">
           <option>Sin Categoria</option>
-          {this.props.categorias.map((valor, indice) => {
-            return <option>{valor}</option>;
+          {this.state.categorias.map((valor, indice) => {
+            return <option key={indice}>{valor}</option>;
           })}
         </select>
         <input
