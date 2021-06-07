@@ -14,6 +14,10 @@ export default class Categorias {
     });
   }
 
+  desuscribir(func) {
+    this._inscritos = this._inscritos.filter((f) => f !== func);
+  }
+
   registrar(nombre) {
     this.categorias.push(nombre);
     this.notificar();
